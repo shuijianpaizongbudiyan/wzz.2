@@ -1,4 +1,4 @@
-# wzz.2
+
 #include<stdio.h>
 int year = 2022;
 void test()
