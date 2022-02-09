@@ -62,6 +62,7 @@ int main()//不创建第三变量
 	return 0;
 }
 
+ //求一个整数存储在内存中的二进制的1的个数
 int main()//正整数
 {
 	int a = 0;
@@ -75,9 +76,38 @@ int main()//正整数
 	}
 	printf("%d\n", count);
 	return 0;
+
+int count_bit_one1(unsigned int a)
+{
+	int count = 0;
+	while (a)
+	{
+		if (a % 2 == 1)
+			count++;
+		a = a / 2;
+	}
+	return count;
+}
+int count_bit_one2(int n)
+{
+	int count = 0;
+	while (n)
+	{
+		n = n & (n - 1);
+		count++;
+	}
+	return count;
+}
+int main()
+{
+	int a = 0;
+	scanf("%d", &a);
+	int count = count_bit_one1(a);
+	printf("count = %d\n", count);
+	return 0;
 }
 
-int main()//求一个整数存储在内存中的二进制的1的个数
+int main()
 {
 	int a = 0;
 	int count = 0;
@@ -91,6 +121,7 @@ int main()//求一个整数存储在内存中的二进制的1的个数
 	printf("%d\n", count);
 	return 0;
 }
+
 
 int main()
 {
