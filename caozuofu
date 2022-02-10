@@ -138,6 +138,30 @@ int main()
 	return 0;
 }
 
+void print(int m)//打印一个数的二进制的奇数位和偶数位
+{
+	int i = 0;
+	printf("奇数位;\n");
+	for (i = 30;i >= 0;i -= 2)
+	{
+		printf("%d", (m >> i) & i);
+	}
+	printf("\n");
+	printf("偶数位;\n");
+	for (i = 31;i >= 1;i -= 2)
+	{
+		printf("%d", (m >> i) & i);
+	}
+	printf("\n");
+}
+int main()
+{
+	int m = 0;
+	scanf("%d", &m);
+	print(m);
+	return 0;
+}
+
 
 
 int main()
