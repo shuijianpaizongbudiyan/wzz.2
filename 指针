@@ -1,0 +1,179 @@
+int main()
+{
+	int a = 0x11223344;
+	int* pa = &a;
+	*pa = 0;//0x00000000
+	char* pc = &a;
+	*pc = 0;//0x11223300只改变了一个字节
+	//指针类型决定了指针进行解引用操作的时候，能够访问空间的大小
+	//int* p;*p能够访问4个字节
+	//char* p;*p能够访问1个字节
+	//double* p;*p能够访问8个字节
+	printf("%p\n", pa);
+	printf("%p\n", pc);
+	return 0;
+}
+
+int main()
+{
+	int a = 0x11223344;
+	int* pa = &a;
+	char* pc = &a;
+	printf("%p\n", pa);
+	printf("%p\n", pa + 1);//地址加4
+	printf("%p\n", pc);
+	printf("%p\n", pc+1);//地址加1
+	//指针类型决定了走一步有多大(字节)
+	return 0;
+}
+
+int main()
+{
+	int arr[10] = { 0 };
+	//int* p = arr;
+	char* p = arr;//只能改10个字节，2.5个整型
+	int i = 0;
+	for (i = 0;i < 10;i++)
+	{
+		*(p + i) = 1;
+	}
+	return 0;
+}
+
+int main()
+{
+	int a;//局部变量不初始化，默认是随机值
+	int* p;//局部的指针变量，就被初始化随机值
+	*p = 10;//p野指针
+	return 0;
+}
+
+int main()
+{
+	int arr[10] = { 0 };
+	int* p = arr;
+	int i = 0;
+	for (i = 0;i < 12;i++)
+	{
+		p++;//当指针指向的范围超出数组arr的范围是，p就是野指针
+	}
+	return 0;
+}
+
+//指针指向的空间释放
+int* test()
+{
+	int a = 10;
+	return &a;
+}//出函数后a的地址已经释放
+int main()
+{
+	int* p = test();
+	*p = 20;
+}
+
+int main()
+{
+	int arr[10] = {0,1,2,3,4,5,6,7,8,9};
+	int* p = arr;
+	int i = 0;
+	int sz = sizeof(arr) / sizeof(arr[0]);
+	for (i = 0;i < sz;i++)
+	{
+      printf("%d ",*p);
+		p++;
+	}
+	return 0;
+}
+
+int main()
+{
+	int arr[] = { 1,2,3,4,5,6,7,8,9,10 };
+	printf("%d\n", arr[9] - arr[0]);
+	//指针减指针得到的是元素个数
+	return 0;
+}
+
+int my_strlen(char* str)//求字符串个数
+{
+	char* start = str;
+	char* end = str;
+	while (*end != '\0')
+	{
+		end++;
+	}
+	return end - start;
+}
+int main()
+{
+	char arr[] = "wzz" ;
+	int len = my_strlen(arr);
+	printf("%d\n", len);
+	return 0;
+}
+#define N_VALUES 5
+int main()//不标准
+{
+	float values[N_VALUES];
+	float *vp;
+	for (vp = &values[N_VALUES - 1];vp >= &values[0];vp--)
+	{
+		*vp = 0;
+	}
+	return 0;
+}
+
+int main()//标准
+{
+	float values[N_VALUES];
+	float *vp;
+	for (vp = &values[N_VALUES];vp > &values[0];)
+	{
+		*--vp = 0;
+	}
+	return 0;
+}
+
+int main()
+{
+	int arr[10] = { 0 };
+	int* p = arr;
+	int i = 0;
+	for (i = 0;i < 10;i++)
+	{
+		*(p + i) = i;
+	}
+	for (i = 0;i < 10;i++)
+	{
+		printf("%d ", *(p + i));
+		//printf("%d ",arr[i]);
+	}
+	return 0;
+}
+
+int main()
+{
+	int a = 0;
+	int* pa = &a;
+	int** ppa = &pa;//二级指针
+	**ppa = 20;
+	printf("%d\n", a);
+	printf("%d\n", **ppa);
+	return 0;
+}
+
+int main()
+{
+	int a = 10;
+	int b = 30;
+	int c = 20;
+	//整形数组--存放整形
+	//指针数组--存放指针
+	int* arr[] = { &a,&b,&c };
+	int i = 0;
+	for (i = 0;i < 3;i++)
+	{
+		printf("%d ", *(arr[i]));
+	}
+	return 0;
+}
