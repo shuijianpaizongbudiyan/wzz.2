@@ -181,13 +181,15 @@ int main()//求1!+2!+...+m!
 	return 0;
 }
 
-int main()//求1!+2!+...+10!
+int main()//求1!+2!+...+m!
 {
 	int i = 0;
 	int sum = 0;
 	int n = 0;
 	int c = 1;
-	for (n = 1;n <= 10;n++)
+	int m = 0;
+	scanf("%d", &m);
+	for (n = 1;n <= m;n++)
 	{
 		c = c * n;
 		sum = sum + c;
