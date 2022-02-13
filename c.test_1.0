@@ -104,9 +104,9 @@ int main()
 {
 	int a = 3;
 	int b = 5;
-	//& = py.and
-	//| = py.or
-	//^ 同0异1
+	//& = py.and//按位与
+	//| = py.or//按位或
+	//^ 同0异1//异或
 	//a = 001
 	//b = 101
 	//a^b = 110 = 6, a&b = 001 = 1
@@ -143,7 +143,7 @@ int main()
 
 int main()
 {
-	int a = 10;//先赋值，再++
+	int a = 10;//后置先赋值，再++
 	//int b = a++;//a = 11,b = 10
 	int b = ++a;//a = 11,b = 11
 	printf("a = % d  b = % d\n", a, b);
@@ -157,6 +157,7 @@ int main()
 	//真 非0
 	int a = 3;
 	int b = 5;
+	//&&逻辑与，||逻辑或
 	int c = a && b;//&&相当于and,||即or
 	printf("c = %d\n", c);
 	int max = 0;
