@@ -226,8 +226,8 @@ int main()
 {
 	int a = 3;//真
 	int b = 5;//真
-	//&& = py.and
-	//|| = py.or
+	//&& = py.and//逻辑与
+	//|| = py.or//逻辑或
 	printf("%d\n", a && b);//真
 	return 0;
 
