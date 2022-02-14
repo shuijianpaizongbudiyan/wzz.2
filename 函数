@@ -156,7 +156,7 @@ int main()
 例如头文件add.h，源文件test.c使用函数，add.c定义函数
 test.c调用 #include "add.h"
 
-void print(int n)//
+void print(int n)//求一个数的每一位
 {
 	if (n > 9)
 	{
@@ -173,6 +173,7 @@ int main()
 	return 0;
 }
 
+//求字符串的长度
 int my_strlen1(char* str)//非递归
 {
 	int count = 0;
@@ -332,7 +333,7 @@ void reverse_string1(char arr[])
 	char tmp= arr[0];
 	int len = strlen(arr);
 	arr[0] = arr[len-1];
-	arr[len - 1] = '\0';
+	arr[len - 1] = '\0';//数组位置加1，最后为'\0',少了前后两个元素
 	if (strlen(arr + 1) >= 2)
 	{
 		reverse_string1(arr + 1);
@@ -364,7 +365,7 @@ int main()
 	return 0;
 }
 
-double Pow(int n, int k)
+double Pow(int n, int k)//求n的k次方
 {
 	if (k < 0)
 		return (1.0 /(Pow(n, -k)));
