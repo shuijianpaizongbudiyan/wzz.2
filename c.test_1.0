@@ -273,3 +273,4 @@ int main()
 	printf("价格 = %d\n", b1.price);
 	return 0;
 }
+ 
