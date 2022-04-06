@@ -307,7 +307,7 @@ int main()//判断是不是闰年
 	return 0;
 }
 
-int main()//求100到200之间的素数
+int main()//求100到200之间的素数 
 {
 	int i = 0;
 	int j = 0;
