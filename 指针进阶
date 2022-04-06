@@ -36,7 +36,7 @@ int main()
 	//所以p1 = p2,arr1 != arr2
 
 }
-
+指针数组
 int main()
 {
 	int arr1[] = { 1,2,3,4,5 };
@@ -604,7 +604,7 @@ int main()
 	printf("%d\n", sizeof(*p));//1
 	printf("%d\n", sizeof(p[0]));//1
 	printf("%d\n", sizeof(&p));//8
-	printf("%d\n", sizeof(&p + 1));//8
+	printf("%d\n", sizeof(&p + 1));//8函数指针的数组函数指针的数组
 	printf("%d\n", sizeof(&p[0] + 1));//8
 	return 0;
 }
